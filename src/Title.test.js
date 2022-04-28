@@ -2,13 +2,13 @@ import {render, screen} from '@testing-library/react';
 
 import Title from './Title';
 
-test('H1 in the document', ()=> {
+test('H1 in the document', () => {
   render(<Title />)
   const h1 = screen.getByText('Hello there React');
   expect(h1).toBeInTheDocument();
 })
 
-test('H1 in the document using re', ()=> {
+test('H1 in the document using re', () => {
   render(<Title />)
   const h1 = screen.getByText(/hello there react/i);
   expect(h1).toBeInTheDocument();
