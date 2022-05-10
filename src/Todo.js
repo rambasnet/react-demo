@@ -3,14 +3,14 @@ import { TextField } from '@mui/material';
 import { Button } from '@mui/material';
 
 function Todo(props) {
-  let name = props.todo.name;
+  let text = props.todo.text;
   if (props.todo.isDone) {
-    name = <s style={{color: "red"}}>{name}</s>;
-    //console.log(name);
+    text = <s style={{color: "red"}}>{text}</s>;
+    //console.log(text);
   }
 
   return (
-    <li key={props.key} onClick={() => props.updateTodo(props.index)}>{name}</li>
+    <li key={props.key} onClick={() => props.updateTodo(props.index)}>{text}</li>
   )
 }
 
@@ -19,7 +19,7 @@ function Todos() {
   const [todo, setTodo] = React.useState("");
 
   function addTodos() {
-    let newtodos = [...todos, {name:todo, isDone:false}]
+    let newtodos = [...todos, {text:todo, isDone:false}]
     setTodos(newtodos);
     setTodo("");
   }
