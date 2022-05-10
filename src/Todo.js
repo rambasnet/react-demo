@@ -38,7 +38,7 @@ function Todos() {
           todos.map((todo, index) => <Todo key={index} index={index} todo={todo} updateTodo={updateTodo} />)
         }
       </ul>
-      <TextField id="todo_text" label="New Todo:" value={todo} onChange={(e) => setTodo(e.target.value)} />
+      <TextField id="todo_text" label="New Todo:" value={todo} onChange={(e) => setTodo(e.target.value)} size="small" />
       <Button variant="contained" onClick={addTodos} >Add</Button>
     </>
   )
