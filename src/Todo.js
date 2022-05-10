@@ -16,14 +16,18 @@ function Todo(props) {
 
 function Todos() {
   const [todos, setTodos] = React.useState([]);
+  const [todo, setTodo] = React.useState("");
 
   function addTodos() {
-    let newtodos = [...todos, {name:document.getElementById('todo_text').value, isDone:false}]
+    let newtodos = [...todos, {name:todo, isDone:false}]
     setTodos(newtodos);
+    setTodo("");
   }
 
   function updateTodo(index) {
-    
+    let new_todos = [...todos];
+    new_todos[index].isDone = true;
+    setTodos(new_todos);
   }
 
   return (
@@ -34,7 +38,7 @@ function Todos() {
           todos.map((todo, index) => <Todo key={index} index={index} todo={todo} updateTodo={updateTodo} />)
         }
       </ul>
-      <TextField id="todo_text" label="New Todo:" />
+      <TextField id="todo_text" label="New Todo:" value={todo} onChange={(e) => setTodo(e.target.value)} />
       <Button variant="contained" onClick={addTodos} >Add</Button>
     </>
   )
