@@ -1,4 +1,5 @@
 import React from 'react';
+import Button from '@mui/material/Button';
 
 function Counter() {
   const [count, setCount] = React.useState(0);
@@ -9,7 +10,7 @@ function Counter() {
   return (
     <>
       <label style={{fontSize: 20}}>Click Count: {count}</label>&nbsp;
-      <button onClick={updateCounter}>Click</button>
+      <Button variant="contained" color="success" onClick={updateCounter} size="small">Click</Button>
     </>
   )
 }

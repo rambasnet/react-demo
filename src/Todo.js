@@ -10,7 +10,7 @@ function Todo(props) {
   }
 
   return (
-    <li key={props.key} onClick={() => props.updateTodo(props.index)}>{text}</li>
+    <a href="#" className="list-group-item list-group-item-action" key={props.key} onClick={() => props.updateTodo(props.index)}>{text}</a>
   )
 }
 
@@ -33,11 +33,11 @@ function Todos() {
   return (
     <>
       <h2>My Todos</h2>
-      <ul>
+      <div className="list-group">
         {
           todos.map((todo, index) => <Todo key={index} index={index} todo={todo} updateTodo={updateTodo} />)
         }
-      </ul>
+      </div>
       <TextField id="todo_text" label="New Todo:" value={todo} onChange={(e) => setTodo(e.target.value)} size="small" />
       <Button variant="contained" onClick={addTodos} >Add</Button>
     </>
